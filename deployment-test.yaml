@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: depotest
+  name: depotest
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: depotest
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: depotest
+    spec:
+      containers:
+      - image: nginx:alpine-perl
+        name: nginx
